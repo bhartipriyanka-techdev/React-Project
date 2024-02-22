@@ -1,0 +1,61 @@
+.body{
+    background-color: cadetblue;
+}
+.AdminSignUp {
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+   /*height: 300px;
+   width: 300px;*/
+}
+
+.AdminSignUp h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.AdminSignUp form {
+    width: 300px;
+    height: 100vh;
+    border-radius: 2px;
+}
+
+.AdminSignUp label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.AdminSignUp input[type="text"],
+.AdminSignUp input[type="email"],
+.AdminSignUp input[type="tel"],
+.AdminSignUp input[type="password"] {
+    width: 100%;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.AdminSignUp button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.AdminSignUp button:hover {
+    background-color:green;
+}
+
+
+.AdminSignUp h2{
+    color: red;
+    font-family :'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

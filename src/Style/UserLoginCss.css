@@ -1,0 +1,53 @@
+.UserLogin {
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.UserLogin h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.UserLogin form {
+    width: 300px;
+}
+
+.UserLogin label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.UserLogin input[type="text"],
+.UserLogin input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.UserLogin button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.UserLogin button:hover {
+    background-color: #0056b3;
+}
+p span{
+    color: red;
+}
+.UserLogin p{
+    text-decoration: none;
+}
+

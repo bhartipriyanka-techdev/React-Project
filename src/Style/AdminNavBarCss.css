@@ -1,0 +1,22 @@
+.AdminNavBar{
+    display: flex;
+    align-items: center;
+    background-color: #090102;
+    justify-content: space-between;
+    padding: 0px 70px;
+    height: 70px;
+    position: relative;
+}
+.AdminNavBar a{
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    margin: 0px 30px;
+}
+.AdminNavBar h1{
+    color:#C42A0C ;
+    font-family: cursive;
+}
+.AdminNavBar span{
+    color: blanchedalmond;
+}
