@@ -6,7 +6,6 @@ import AdminLogin from './Components/AdminLogin';
 import AdminSignUp from './Components/AdminSignUp';
 import ErrorPage from './Components/ErrorPage';
 import LandingPage from './Components/LandingPage';
-import UserLogin from './Components/UserLogin';
 
 function App() {
   return (
@@ -16,7 +15,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path = "/*" element ={<ErrorPage />} />
           <Route path="/admin" element={<AdminLogin />} />
-          <Route path="/user" element={<UserLogin />} />
+          
           <Route path = "/adminSignUp" element ={<AdminSignUp />} />
           <Route path = "/adminHomePage/*" element ={<AdminHomePage />} />
         </Routes>

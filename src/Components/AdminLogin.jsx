@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import '../Style/AdminLogin.css';
  
 const AdminLogin = () => {
@@ -41,7 +41,7 @@ const AdminLogin = () => {
 
     return ( 
         <div className="AdminLogin">
-           <h1>Admin Login</h1>
+           
            <form>
             <label>
                UserName:<input type="text" value={uname} onChange={(e)=> { setuname(e.target.value)}} placeholder="Enter the Username" />
@@ -53,7 +53,7 @@ const AdminLogin = () => {
             </label>
             <br />
             <button onClick={login}Login>Login</button>
-            <p>Are you new to the page ?<Link to="/AdminSignUp">SignUp Now</Link></p>
+           
 
            </form>
         </div>

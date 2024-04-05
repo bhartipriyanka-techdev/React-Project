@@ -1,50 +1,72 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Navbar from 'react-bootstrap/Navbar';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import EditIcon from '@mui/icons-material/Edit';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Style/AdminViewCss.css';
+
 const AdminView = () => {
+  let [data, setData] = useState([])
+  let [force, setForce] = useState(true)
+  useEffect(() =>{
+    axios.get("http://localhost:1000/Product")
+    .then((res) =>{
+      console.log(res.data)
+      setData(res.data)
+    })
+    .catch((err) =>{
+      console.log(err)
+    })
+  },[force])
+
+  //Function creation
+  let navigate = useNavigate()
+  
+  function editProduct(id){
+    navigate(`/AdminHomePage/EditProduct/${id}`) //Back Tick 
+
+
+  }
+
+  //Delete Function
+  function deleteProduct(id,pName){
+    axios.delete(`http://localhost:1000/Product/${id}`)
+    .then((res) =>
+    {
+      alert(pName+"Deleted Successfully...!")
+      setForce(!force)
+    })
+    .catch((rej)=>{
+      alert("Data Not Found")
+    })
+
+  }
+
     return ( 
-        <div>
-            <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#">Food Court</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">About</Nav.Link>
-            <NavDropdown title="Categeory" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Veg</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-        
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        <div className="adminView">
+          {data.map((x) =>{
+          return(
+            <div className ="displayProduct">
+             <h1> {x.pModel}</h1>
+              <div className='review'>
+              <h3>{x.pName}</h3>
+             </div>
+             <div className='prc'>
+             <p>MRP: ${x.pPrice}.00</p>
+             </div>
+             
+             <div className='opt'>
+
+             <EditIcon onClick ={() => {editProduct(x.id)}}/>
+             <DeleteForeverIcon onClick = {() => {deleteProduct(x.id,x.pName)}}/>
+
+              </div>
+              </div>
+
+          )
+          })}
+           
+            
         </div>
      );
 }

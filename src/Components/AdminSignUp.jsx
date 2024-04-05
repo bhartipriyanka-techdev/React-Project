@@ -14,7 +14,6 @@ const AdminSignUp = () => {
     const addAdmin = (e) => {
         e.preventDefault(); // Prevent refreshing
         const admins = { name, email, phone, profile, password, cPassword };
-
         axios.post("http://localhost:9000/Manager",admins)
 
         
@@ -35,7 +34,7 @@ const AdminSignUp = () => {
 
     return (
         <div className="AdminSignUp">
-            <h2><u>Admin Registration Form</u></h2>
+            <h3><u>Admin Registration Form</u></h3>
             <form onSubmit={addAdmin}>
                 <label>
                     Name: 

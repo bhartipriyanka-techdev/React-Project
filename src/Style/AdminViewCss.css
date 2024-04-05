@@ -1,3 +1,49 @@
-.bg-body-tertiary{
-    background-color: #090102;
+/* AdminViewCss.css */
+
+.adminView {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: ghostwhite;
+  }
+  
+  .displayProduct {
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .displayProduct img {
+    width: 100%;
+    border-radius: 5px;
+    transition: 1s; /* move the transition here to apply to all properties */
 }
+.displayProduct img:hover {
+  transform: scale(1.1); /* example transformation */
+}
+
+  
+  .displayProduct p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .displayProduct h3 {
+    margin: 5px 0;
+    font-size: 20px;
+  }
+  .review b{
+    
+    color: green;
+  }
+  .btn1{
+    background-color: black;
+    width: 50px;
+    height: 25px;
+    font-size:x-small;
+    font-family: cursive;
+    text-align: center;
+  }
